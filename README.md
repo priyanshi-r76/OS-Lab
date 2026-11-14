@@ -1,7 +1,8 @@
-# OS-Lab
-# Operating Systems Lab
+# OS-Lab Repository README
 
-A collection of C programs developed for the Operating Systems Laboratory, covering process management, inter-process communication, CPU scheduling, and page replacement algorithms.
+This repository contains lab assignments, system programming implementations, and operating system concepts developed during coursework in Computer Science and Engineering. It includes hands-on implementations of process management, CPU scheduling, synchronization primitives, memory management, and file system operations in C/C++.
+
+---
 
 ## 🧪 List of Experiments
 
@@ -21,6 +22,8 @@ A collection of C programs developed for the Operating Systems Laboratory, cover
 | 12 | Implementation of FIFO Page Replacement Algorithm | 
 | 13 | Implementation of LRU Page Replacement Algorithm | 
 
+---
+
 ### Repository Structure
 
 ```text
@@ -38,32 +41,72 @@ Oct 23/  Process sums and IPC
 Oct3 0/  CPU scheduling and page replacement
 README.md
 ```
+---
 
-### Compilation and Execution
+## Topics & Experiments Covered
 
-From the repository root, compile and run a program on Linux:
+* **Process Management:** Creating and managing processes using system calls like `fork()`, `exec()`, `wait()`, and inter-process communication via pipes and message queues.
+* **CPU Scheduling Algorithms:** Simulating preemptive and non-preemptive scheduling policies:
+* First-Come, First-Served (FCFS)
+* Shortest Job First (SJF / SRTF)
+* Priority Scheduling
+* Round Robin (RR)
+
+
+* **Process Synchronization:** Solving classical synchronization problems using POSIX threads (`pthread`), mutex locks, and semaphores.
+* **Deadlock Handling:** Implementation of Dijkstra's Banker's Algorithm for deadlock avoidance and resource allocation graphs.
+* **Memory Management:** Simulating virtual memory management techniques and page replacement algorithms (FIFO, Least Recently Used, Optimal).
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* A C/C++ compiler supporting C11/C++11 or higher (e.g., `gcc`, `g++`)
+* Make build utility (optional, for automated compilation)
+* Linux / Unix environment (recommended for system call execution)
+
+### Cloning the Repository
 
 ```bash
-gcc -Wall -Wextra Oct23/odd_even_sum_fork.c -o odd_even_sum_fork
-./odd_even_sum_fork
+git clone https://github.com/priyanshi-r76/OS-Lab.git
+cd OS-Lab
+
 ```
+---
 
-Compile the two files in each IPC pair separately. Run both executables from the same working directory.
+## Running the Programs
 
-- **Named pipe** — Run the writer in one terminal and enter a message. While the writer waits, run the reader in a second terminal. The reader removes `myfifo`.
-- **Message queue** — Run the sender first and then the receiver. The receiver removes the queue.
-- **Shared memory** — Run the writer to completion before running the reader. The reader removes the shared memory segment.
+1. Navigate to the specific experiment directory:
+```bash
+cd "CPU Scheduling"
 
-The scheduling programs assume that all processes are available at time zero. FCFS uses input order. SJF and priority scheduling are non-preemptive and use input order for ties. A smaller priority number indicates higher priority.
+```
+2. Compile the source code:
+```bash
+gcc -o scheduler fcfs.c
 
-### Technologies Used
+```
+3. Run the executable:
+```bash
+./scheduler
 
-C, GCC, Linux/Unix, and GitHub.
+```
+---
 
-### Reference
+## Author
 
-Operating Systems Laboratory Manual, Academic Session 2026–27.
+* **Priyanshi Rawat**
+B.Tech Computer Science and Engineering
+Graphic Era University
+---
 
-### Notes
+## Details
 
-[OS Lab notes on Google Drive](https://drive.google.com/drive/folders/1cgoAxjrQ6s09EXEoFg5ZmxytkWOAT7B0?usp=sharing)
+**Section** - CSE-iOS
+**Class Roll No.** - 48
+**Subject** - Operating System Lab Manual
+**Faculty** - Dr. Shiddhant Thapliyal
+
+---
